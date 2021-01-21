@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jsLesson</title>
+	</head>
+	<body>
+		<button id="a" >A</button>
+		<button id="b" >B</button>
+		<div id="result"></div>
+<script>
+	/*
+	window.onload=()=>{
+		document.getElementById('a').addEventListener('click',myHandler);
+		document.getElementById('b').addEventListener('click',myHandler);
+	}
+	*/
+	window.addEventListener('load',()=>{
+		document.getElementById('a').addEventListener('click',myHandler);
+		document.getElementById('b').addEventListener('click',myHandler);
+		});
+	const myHandler=(e)=>{
+		document.getElementById('result').textContent=e.target.textContent+'が選ばれた';
+	};
+</script>
+	</body>
+</html>

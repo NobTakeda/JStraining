@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jsLesson</title>
+	</head>
+	<body>
+		<p id="word">Hello</p>
+<script>
+	console.log(window);
+	//window.alert('hello js!');
+	//window.open('https://joytas.net/');
+	console.log(document);
+	//document.getElementById('word').textContent='World';
+	const ele=document.getElementById('word');
+	let modify=()=>{
+		ele.style.backgroundColor='blue';		
+	};
+	let modify2=()=>{
+		ele.style.width='600px';
+		ele.style.height='400px';
+	};
+	let modify3=()=>{
+		ele.style.opacity='0.5';
+	};
+	let modify4=()=>{
+		ele.style.opacity='1';
+	};
+	ele.addEventListener('click',modify);//これでid='word'にクリックした時の動作を設定
+	ele.addEventListener('click',modify2);//
+	ele.addEventListener('mouseover',modify3);
+	ele.addEventListener('mouseout',modify4);
+	console.dir(ele);
+	ele.style.color='red';
+	ele.style.width='200px';
+	ele.style.height='150px';
+	ele.style.textAlign='center';//ハイフンは使えない(マイナスとして解釈されるため)
+	ele.style.lineHeight='150px';
+	ele.style.backgroundColor='yellow';
+
+	function sayHello(){
+		console.log('Hello');
+	}
+	sayHello();
+
+	function calc(x,y){
+		console.log(x+y);
+	}
+	calc(10,20);
+	calc('Hello','World');
+
+	function calc2(x,y){
+		return x*y;
+	}
+	let n=calc2(5,8);
+	console.log(n);
+	let func=calc;
+	//メソッドの位置を参照している情報をfuncに代入
+	func(1000,2000);
+	
+	let calc3=(x,y)=>{console.log(x%y);};
+	//calc3に引数を(x,y)としたメソッドconsole.log(x%y)を代入。
+	calc3(10,3);
+	
+	let calc4=()=>{console.log('Hello');};
+	calc4();
+
+</script>
+	</body>
+</html>
