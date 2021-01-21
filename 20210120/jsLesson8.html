@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>bmi</title>
+	</head>
+	<body>
+		体重(kg):<input type="number" id="weightKg"><br>
+		身長(cm):<input type="number" id="heightCm"><br>
+		<button onclick="calc()">計算</button>
+		<div id="result"></div>
+<script>
+	const weightKg=document.getElementById("weightKg");	
+	const heightCm=document.getElementById("heightCm");	
+	const calc=()=>{
+		let weight=parseInt(weightKg.value);
+		let height=parseInt(heightCm.value);
+		let bmi=weight/((height/100)*(height/100));
+		let str=`あなたのbmiは${bmi}です。`;
+		result.textContent=str;
+	};
+</script>
+	</body>
+</html>

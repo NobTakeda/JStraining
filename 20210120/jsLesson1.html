@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jsレッスン</title>
+	</head>
+	<body>
+		<div id="result"></div>
+		<p>hello</p>
+		<p>world</p>
+<script>
+	let x=10;
+	let y=20;
+	let z=x+y;
+	let str="x+y="+z;
+	console.log(str);
+	let a=1.0;
+	a="Hello";
+	//jsでは""も''も文字列として扱う。
+	//jsでは型宣言をするわけではないのでどんな型でも突っ込める。
+	console.log(a);
+	var b=2.0;
+	//昔はvarしかなかった。
+	//letはブロックスコープ。
+	//varは関数スコープ。
+	console.log(b);
+	console.log(window);
+	console.log(document);
+	const ele=document.getElementById("result");
+	//classから引っ張ってくる場合はgetElementsByClass()
+	//const…finalと同じ。この宣言された変数は定数となり、再代入できなくなる。
+	//document=requestと同じ。
+	//windowはwebブラウザを管理し、documentはブラウザ内の文章全体にかかる。
+	//document内のidという要素をgetしてくるという意味。
+	ele.textContent=str;
+	//id="resule"がeleに入っており、その中のテキストにstrを代入する。
+	console.dir(ele);//eleの保持するプロパティ(fieldのこと)を見る
+	//window.alert("Hello JS!");
+	//let ans=window.confirm("JSは楽しいですか？");
+	//ポップアップを出して、選択次第でtrue,falseを返す
+	//console.log(ans);
+	//ans=window.prompt("好きな言葉を入れてね");
+	//ポップアップウィンドウで入力した言葉を返しansに代入
+	//ele.textContent=ans;
+
+	let arr=[22,10,44];
+	console.log(arr[0]);
+	for(let i=0;i<arr.length;i++){
+		console.log(arr[i]);
+	}
+	for(let n of arr){
+		console.log(n);
+	}
+	let pelements = document.getElementsByTagName("p");
+	//getElementsは戻り値が配列となる。
+	for(let i=0;i<pelements.length;i++){
+		console.log(pelements[i].textContent);
+	}
+
+	let hoge = document.getElementsByTagName("span");
+	console.log(hoge);
+	//要素がない場合、要素数が0の配列となる。
+	
+	let mixArr=["hoge",20,0,1];
+	//型がバラバラでも配列にできる
+	for(let val of mixArr){
+		console.log(val);
+	}
+
+	//Objectは{},配列は[]
+	const obj1={"name":"John","age":22};
+	console.log(obj1);
+	console.log(obj1.name);
+	console.log(obj1.age);
+	//javaのクラスにあたるものを宣言と同時にインスタンス化できる
+	obj1.gender="man";
+	console.log(obj1);
+	//fieldも動的に追加できる・・・が、
+	obj1.namae="Paul";
+	//nameに代入するつもりが新しいプロパティを作ってしまうミスがある
+	
+	//JavaScriptでは右辺にmethodを置くことができる
+	let func1=function(){console.log("ドーナツ");};
+	func1();//func1が参照しているmethodを実行演算子「()」で実行
+
+	let func2=function(arg){console.log(arg*2)};
+	func2(5);
+
+	//戻り値は書かないが、メソッドの定義としてfunctionを書く
+	function maxOf(x,y){
+		return x>y ? x:y;
+	}
+	/*
+	public int maxOf(int x,iny y){}
+	*/
+	console.log(maxOf(20,30));
+	let func3=maxOf;
+	ans=func3(100,200);
+	console.log(ans);
+
+	//Lambda式(ラムダ式)
+	const func4=()=>{console.log("double-arrow");};	
+	//()=>でfunction()と同じ意味
+	func4();
+
+	const func5=(x,y)=>{console.log(x+y);};
+	func5(10,50);
+
+	//引数が1個なら()を省略できる
+	const func6=x=>{console.log(x*2);};
+	func6(10);
+
+	//処理が1個なら{}も省略できる
+	const func7=x=>console.log(x*3);
+	func7(20);
+</script>
+	</body>
+</html>
