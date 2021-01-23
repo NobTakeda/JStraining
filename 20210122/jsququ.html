@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jsLesson</title>
+  <style>
+    table{
+      border-collapse:collapse;
+    }
+    .nakami{
+      border:1px solid #333;
+      width:50px;
+      height:50px;
+      text-align:center;
+			line-height:50px;
+    }
+    .midashi{
+      border:1px solid #333;
+      width:50px;
+      height:50px;
+      text-align:center;
+      background:#1cb8ec;
+      color:white;
+			line-height:50px;
+    }
+  </style>
+	</head>
+	<body>
+	<table id="table"></table>
+<script>
+	'use strict';
+	window.onload=function(){
+		const size=10;
+		let table=document.getElementById('table');
+		
+		for(let i=0;i<10;i++){
+				const tr=document.createElement('tr');	
+			for(let j=0;j<10;j++){
+				if(i==0 || j==0){
+					const td=document.createElement('td');
+					td.className='midashi';
+					if(i==0 && j==0){
+						td.textContent='X';
+					}else if(i==0){
+						td.textContent=`${j}`;
+					}else{
+						td.textContent=`${i}`;
+					}
+					table.appendChild(td);
+				}else{
+					const td=document.createElement('td');
+					td.className='nakami';
+					td.textContent=`${i*j}`;
+					table.appendChild(td);
+				}
+			}
+			table.appendChild(tr);
+		}
+	};
+</script>
+	</body>
+</html>
